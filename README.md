@@ -1,6 +1,8 @@
 # Is It Up
 Is It Up is a Javascript based service dashboard with built-in browser notifications.
 
+![Demo](https://github.com/joeinnes/is-it-up/blob/master/demo.png)
+
 It functions by attempting to load an image from the server. If any response is received, the server is seen as 'up' (whether the image is available or not). If the request times out, the server is seen as 'down'.
 
 Notifications are displayed in case a server that was previously up goes down.
