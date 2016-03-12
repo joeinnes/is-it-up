@@ -50,6 +50,8 @@ var servers = [{
   "notified": true
 }];
 
+var pingCount = 0;
+
 servers.forEach(function(server) {
 	var thisServer = document.createElement('li');
 	thisServer.id = server.name;
@@ -76,15 +78,18 @@ setInterval(function() {
       thisServer.innerHTML = '<a class="button is-success">✓</a> &nbsp;' + server.name;
       servers[index].notified = false;
     } else {
-      var thisServer = document.getElementById(server.name);
-      thisServer.innerHTML = '<a class="button is-danger">✗</a> &nbsp;' + server.name;
-      if (server.name != 'breakMe' && server.notified === false) {
-        notify(server.name + ' is down', 'test.png', 'Alert');
-	servers[index].notified = true;
+      if (pingCount > 2) {
+        var thisServer = document.getElementById(server.name);
+        thisServer.innerHTML = '<a class="button is-danger">✗</a> &nbsp;' + server.name;
+        if (server.name != 'breakMe' && server.notified === false) {
+          notify(server.name + ' is down', 'test.png', 'Alert');
+	  servers[index].notified = true;
+        }
       }
     }
   });
   p = null;
+  pingCount++;
 });
 }, 5000);
 
