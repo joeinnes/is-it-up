@@ -8,6 +8,16 @@ var servers = [{
         "ip": "outlook.office365.com",
         "successCount": 0,
         "notified": true
+    }, {
+        "name": "Joe's Homepage",
+        "ip": "joeinn.es",
+        "successCount": 0,
+        "notified": true
+    }, {
+        "name": "Mokus",
+        "ip": "mokus.xyz",
+        "successCount": 0,
+        "notified": true
     }];
 
 var pingCount = 0;
@@ -35,12 +45,12 @@ setInterval(function() {
 
             if (servers[index].successCount > 2) {
                 var thisServer = document.getElementById(server.name);
-                thisServer.innerHTML = '<a class="button is-success">✓</a> &nbsp;' + server.name;
+                thisServer.innerHTML = '<a class="button is-success">&#10003;</a> &nbsp;' + server.name;
                 servers[index].notified = false;
             } else {
                 if (pingCount > 2) {
                     var thisServer = document.getElementById(server.name);
-                    thisServer.innerHTML = '<a class="button is-danger">✗</a> &nbsp;' + server.name;
+                    thisServer.innerHTML = '<a class="button is-danger">&#10007;</a> &nbsp;' + server.name;
                     if (server.name != 'breakMe' && server.notified === false) {
                         notify(server.name + ' is down', 'test.png', 'Alert');
                         servers[index].notified = true;
