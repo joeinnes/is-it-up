@@ -5,7 +5,7 @@ var servers = [{
   "notified": true
 }, {
   "name": "Outlook (Exchange)",
-	"ip": "outlook.office365.com", 
+  "ip": "outlook.office365.com", 
   "successCount": 0,
   "notified": true
 }];
