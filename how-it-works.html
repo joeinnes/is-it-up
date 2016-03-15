@@ -1,0 +1,88 @@
+<html>
+
+<head>
+    <title>Is It Up?</title>
+    <link rel="stylesheet" href="./css/bulma.min.css">
+</head>
+
+<body>
+    <style>
+        li {
+            padding-bottom: 5px;
+        }
+        
+        .is-thin {
+            width: 50px !important;
+        }
+        
+        #displayData {
+            min-height: 50vh;
+        }
+    </style>
+
+    <section class="hero is-fullheight is-left">
+        <!-- Hero header: will stick at the top -->
+        <div class="hero-header">
+            <header class="header">
+                <div class="container">
+                    <div class="header-left"><a class="header-item" href="#">SD Projects</a><a class="header-tab" href="index.html">Is It Up?</a>
+                        <a
+                        class="header-tab is-active" href="how-it-works.html">How It Works</a>
+                    </div>
+                </div>
+            </header>
+        </div>
+
+        <!-- Hero content: will be in the middle -->
+        <div class="hero-content">
+            <div class="container">
+                <div class="columns">
+                    <div class="column">
+                        <h1 class="title is-1">Is It Up?</h1>
+                        <p class="content">
+                            Is It Up? makes use of the <a href="http://bulma.io/" target="_blank">Bulma</a> CSS framework for its display paradigms. The main 'ping' functionality was originally designed by <a href="http://stackoverflow.com/users/429938/trante">Trante</a>, and published on <a href="http://jsfiddle.net/GSSCD" target="_blank">JS Fiddle</a>.
+                        </p>
+                        <h3 class="title is-3">The Ping Function</h3>
+                        <p class="content">
+                             The ping function opens a connection to the remote server, and attempts to load an image file. Any response to this request (even an error response) is considered a 'successful' ping. This means that the application may not work well behind proxies that implement their own 'page not found' functionality. A failure to respond at all classes as a 'failed' ping. Once the first three pings have been completed, the server status is displayed as either 'up' or 'down'. 
+                        </p>
+                        <h3 class="title is-3">Persistence</h3>
+                        <p class="content">
+                             Is It Up? saves your server list in your browser's local storage. This is not a guaranteed or reliable location to store data, but it allows for some degree of persistence between browser sessions.  
+                        </p>
+                        <h3 class="title is-3">Limitations</h3>
+                        <p class="content">
+                             Is It Up? will function poorly on slow network connections. This is because a time limit of 1.9 seconds is used for each ping request. Higher values resulted in false positives. In case the request is still 'in-flight' after 1.9 seconds, a false negative will be returned. There is a degree of tolerance built in - only in case of three consecutive failed pings does the server show as down. Three consecutive 'successful' pings will result in the server being flagged as 'up' again.
+                        </p>
+                        <h3 class="title is-3">Notifications</h3>
+                        <p class="content">
+                             Is It Up? will notify you with a Chrome notification when a server goes down. You can turn these notifications off if you like, using the checkbox underneath the 'Add new server' form. 
+                        </p>
+                        <h3 class="title is-3">Questions and Suggestions</h3>
+                        <p class="content">
+                             Please feel free to direct any questions or suggestions to <a href="mailto:joe@joeinn.es">joe@joeinn.es</a>. 
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero footer: will stick at the bottom -->
+        <div class="hero-footer">
+            <footer class="footer">
+                <div class="container">
+                    <div class="content is-centered">
+                        <p>
+                            <strong>Is It Up?</strong> by <a href="mailto:joe@joeinn.es">Joe Innes</a>. A bit of five minute
+                            fun.</p>
+                        <p>
+
+                        </p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </section>
+</body>
+
+</html>

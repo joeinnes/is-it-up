@@ -8,25 +8,67 @@
 li {
 padding-bottom: 5px;
 }
-.button {
+.is-thin {
 width: 50px !important;
 }
+
+#displayData {
+min-height: 50vh;
+}
 </style>
-<header class="header">  
-<div class="container"><div class="header-left"><a class="header-item" href="#">SD Projects</a><a class="header-tab is-active" href="#">Is It Up?</a></div></div>
-</header>
-<section class="section">
-<div class="container">
+
+<section class="hero is-fullheight is-left">
+  <!-- Hero header: will stick at the top -->
+  <div class="hero-header">
+	<header class="header">  
+	<div class="container"><div class="header-left"><a class="header-item" href="#">SD Projects</a><a class="header-tab is-active" href="#">Is It Up?</a><a class="header-tab" href="how-it-works.html">How It Works</a></div></div>
+	</header>
+  </div>
+
+  <!-- Hero content: will be in the middle -->
+  <div class="hero-content">
+    <div class="container">
 <div class="columns">
   <div class="column">
     <h1 class="title is-1">Is It Up?</h1>
+<div>
     <ul id="displayData"></ul>
+</div>
     <p>Checking every 5 seconds.</p>
+<h3 class="title is-3">Add new server</h3>
+    <div class="columns">
+    <div class="column">
+     <p class="control">
+  <label class="label">Display name</label>
+  <input type="text" id="newservername" class="input"></input>
+</p>
+</div>
+<div class="column">
+<p class="control">
+  <label class="label">Hostname/IP</label>
+  <input type="text" id="newserverhost" class="input"></input>
+</p>
+</div>
+</div>
+<p class="control">
+  <button class="button is-primary" type="submit" onclick="addServer()">Submit</button>
+  <button class="button">Cancel</button>
+</p>
+<p class="control">
+  <label class="checkbox">
+    <input type="checkbox" id="notifications-off">
+    Disable Notifications
+  </label>
+</p>
   </div>
 </div>
 </div>
-</section>
-<footer class="footer">
+
+  </div>
+
+  <!-- Hero footer: will stick at the bottom -->
+  <div class="hero-footer">
+    <footer class="footer">
   <div class="container">
     <div class="content is-centered">
       <p>
@@ -37,6 +79,8 @@ width: 50px !important;
     </div>
   </div>
 </footer>
+  </div>
+</section>
 <script src="./js/main.js">
 </script>
 </body>
