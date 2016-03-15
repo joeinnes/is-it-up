@@ -162,7 +162,7 @@ Server = function(serverName, hostname) {
             alert("This browser does not support desktop notification");
         } else if (Notification.permission !== 'denied') {
             var n = new Notification(title, options);
-            setTimeout(n.close.bind(n), 2000);
+            setTimeout(n.close.bind(n), 5000);
         }
         
     };
