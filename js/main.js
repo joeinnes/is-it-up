@@ -153,6 +153,7 @@ Server = function(serverName, hostname) {
         if (notifications.checked) {
             return; // and do nothing;
         }
+        
         var options = {
             body: body,
             icon: 'img/alert.png'
@@ -160,17 +161,11 @@ Server = function(serverName, hostname) {
         
         if (!("Notification" in window)) {
             alert("This browser does not support desktop notification");
-        } else if (Notification.permission === "granted") {
+        } else if (Notification.permission !== 'denied') {
             var n = new Notification(title, options);
             setTimeout(n.close.bind(n), 2000);
-        } else if (Notification.permission !== 'denied') {
-            Notification.requestPermission(function(permission) {
-                if (permission === "granted") {
-                    var n = new Notification(title, options);
-                    setTimeout(n.close.bind(n), 2000);
-                }
-            });
         }
+        
     };
 };
 
