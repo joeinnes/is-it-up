@@ -14,13 +14,13 @@ if (!servers) {
     "successCount": 0,
     "notified": true
 }, {
-    "name": "Joe's Homepage",
-    "ip": "joeinn.es",
+    "name": "Google",
+    "ip": "google.com",
     "successCount": 0,
     "notified": true
 }, {
-    "name": "Mokus",
-    "ip": "mokus.xyz",
+    "name": "Broken - this shouldn't work",
+    "ip": "i.am.a.banana",
     "successCount": 0,
     "notified": true
     }];
@@ -62,7 +62,6 @@ Server = function(serverName, hostname) {
             var index = serverList.indexOf(this);
             serverList.splice(index, 1);
             for (var i = 0; i < servers.length; i++) {
-                console.log(this.parentNode.id);
                 if (servers[i].name === this.parentNode.id) {
                     servers.splice(i, 1);
                     localStorage.setItem('servers', JSON.stringify(servers));
@@ -179,7 +178,6 @@ servers.forEach(function(server, index) {
 setInterval(function() {
   serverList.forEach(function(server) {
     server.ping();
-    console.log(server.successCount);
   });
 }, 2000);
 
